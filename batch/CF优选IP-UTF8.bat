@@ -7,17 +7,17 @@ goto notice
 :notice
 echo 如果这些下面这些文件下载失败,可以手动访问网址下载保存至同级目录
 
-echo https://www.baipiao.eu.org/cloudflare/colo 另存为 colo.txt
-echo https://www.baipiao.eu.org/cloudflare/url 另存为 url.txt
-echo https://www.baipiao.eu.org/cloudflare/ips-v4 另存为 ips-v4.txt
-echo https://www.baipiao.eu.org/cloudflare/ips-v6 另存为 ips-v6.txt
+echo https://Chineseboy.eu.org/cloudflare/color.txt 另存为 colo.txt
+echo https://Chineseboy.eu.org/cloudflare/url.txt 另存为 url.txt
+echo https://Chineseboy.eu.org/cloudflare/ips-v4.txt 另存为 ips-v4.txt
+echo https://Chineseboy.eu.org/cloudflare/ips-v6.txt 另存为 ips-v6.txt
 goto datacheck
 
 :datacheck
-if not exist "colo.txt" echo 从服务器下载数据中心信息 colo.txt&curl --retry 2 -s https://www.baipiao.eu.org/cloudflare/colo -o colo.txt&goto datacheck
-if not exist "url.txt" echo 从服务器下载测速文件地址 url.txt&curl --retry 2 -s https://www.baipiao.eu.org/cloudflare/url -o url.txt&goto datacheck
-if not exist "ips-v4.txt" echo 从服务器下载IPV4数据 ips-v4.txt&curl --retry 2 -s https://www.baipiao.eu.org/cloudflare/ips-v4 -o ips-v4.txt&goto datacheck
-if not exist "ips-v6.txt" echo 从服务器下载IPV6数据 ips-v6.txt&curl --retry 2 -s https://www.baipiao.eu.org/cloudflare/ips-v6 -o ips-v6.txt&goto datacheck
+if not exist "colo.txt" echo 从服务器下载数据中心信息 colo.txt&curl --retry 2 -s https://Chineseboy.eu.org/cloudflare/colo.txt -o colo.txt&goto datacheck
+if not exist "url.txt" echo 从服务器下载测速文件地址 url.txt&curl --retry 2 -s https://Chineseboy.eu.org/cloudflare/url.txt -o url.txt&goto datacheck
+if not exist "ips-v4.txt" echo 从服务器下载IPV4数据 ips-v4.txt&curl --retry 2 -s https://Chineseboy.eu.org/cloudflare/ips-v4.txt -o ips-v4.txt&goto datacheck
+if not exist "ips-v6.txt" echo 从服务器下载IPV6数据 ips-v6.txt&curl --retry 2 -s https://Chineseboy.eu.org/cloudflare/ips-v6.txt -o ips-v6.txt&goto datacheck
 set /a n=0
 for /f "tokens=1 delims=/" %%i in (url.txt) do (
 if !n! EQU 0 set domain=%%i&set /a n+=1
